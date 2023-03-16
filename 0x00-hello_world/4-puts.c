@@ -3,6 +3,10 @@
 
 int main(void)
 {
-	puts("\"Programming is like building a multilingual puzzle\n");
+	char str[]="Programming is like building a multilingual puzzle";
+	char s[]="\"";
+	strcpy(str,s)
+	puts (str);
+
 	return(0);
 }
