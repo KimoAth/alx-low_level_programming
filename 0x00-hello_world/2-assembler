@@ -1,2 +1,2 @@
 #include <stdio.h>
-gcc $CFILE  -S main.s 
+gcc -S  $CFILE  
