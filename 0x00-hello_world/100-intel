@@ -1,2 +1,2 @@
 #!/bin/bash
-objdump -d --disassembler-options=intel a.out
+gcc -S -masm=intel $CFILE
