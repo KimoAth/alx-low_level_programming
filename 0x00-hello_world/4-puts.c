@@ -5,7 +5,8 @@ int main(void)
 {
 	char str[]="Programming is like building a multilingual puzzle";
 	char s[]="\"";
-	strcpy(str,s)
+	strcpy(str,s);
+
 	puts (str);
 
 	return(0);
