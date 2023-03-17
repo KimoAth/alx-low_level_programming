@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <ctype.h>
 /**
-*main - Prints all single digits with , and space 
+*main - Prints all single digits with , and space
 *
 *Return: returns 0
 */
