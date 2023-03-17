@@ -8,7 +8,6 @@
 int main(void)
 {
 	int let;
-	
 	for (let = 'a'; let <= 'z'; let++)
 	{
 		let = tolower(let);
