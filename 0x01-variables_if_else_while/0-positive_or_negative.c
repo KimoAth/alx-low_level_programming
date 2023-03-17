@@ -9,7 +9,7 @@ int main(void)
 {
 	int n;
 	printf("type a number please: ");
-
+	sanf("%d", &n);
 	if(n>0)
 	{
 		printf("%d is positive\n",n);
