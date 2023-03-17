@@ -8,7 +8,6 @@
 int main (void)
 {
 	int n;
-	printf ("type a number please: ");
 	scanf ("%d", &n);
 	if (n>0)
 	{
