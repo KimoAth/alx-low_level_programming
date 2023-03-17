@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <ctype.h>
 /**
-*main - Prints all single digits of base 16 
+*main - Prints all single digits of base 16
 *
 *Return: returns 0
 */
