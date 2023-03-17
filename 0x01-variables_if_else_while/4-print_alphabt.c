@@ -1,24 +1,22 @@
 #include <stdio.h>
 #include <ctype.h>
 /**
-*main - print alphabet lets except q and e
+*main - Program to print alphabet letters except q and e followed by new line
 *
 *Return: return 0
 */
 int main(void)
 {
-	int let;
+	int letter;
 
-	for (let = 'a'; let <= 'z'; let++)
+	for (letter = 'a'; letter <= 'z'; letter++)
 	{
-		if (let == 'q' || let == 'e')
+		if (letter == 'q' || letter == 'e')
 		{
 			continue;
 		}
-		
-		putchar(let);
+		putchar(letter);
 	}
 	putchar('\n');
-	
 	return (0);
 }
