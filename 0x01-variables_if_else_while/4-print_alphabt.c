@@ -7,6 +7,7 @@
 */
 int main(void)
 {
+
 	int let;
 
 	for (let = 'a'; let <= 'z'; let++)
@@ -15,8 +16,11 @@ int main(void)
 		{
 			continue;
 		}
+		
 		putchar(let);
 	}
+
 	putchar('\n');
+	
 	return (0);
 }
