@@ -6,6 +6,15 @@
 */
 int main(void)
 {
-	putchar("_putchar\n");
+	char car[]="_putchar";
+
+	int l;
+
+	for(l = 0 ; l < 8 ; l++)
+	{
+		_putchar(car[l]);
+	}
+	putchar("\n");
+	
 	return (0);
 }
