@@ -4,7 +4,7 @@
  *@c: The character to print
  *Return: Always 0 (Success)
 */
-int main()
+int main(void)
 {
 	putchar("_putchar");
 	return (0);
