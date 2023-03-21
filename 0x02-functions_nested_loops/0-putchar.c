@@ -4,17 +4,17 @@
  *@c: The character to print
  *Return: Always 0 (Success)
 */
-int main (void)
+int main(void)
 {
-	char car[] = "_putchar" ;
+	char car[] = "_putchar";
 
-	int l ;
+	int l;
 
-	for(l = 0 ; l < 8 ; l++)
+	for(l = 0; l < 8; l++)
 	{
-		_putchar (car[l]) ;
+		_putchar(car[l]) ;
 	}
-	_putchar ('\n') ;
+	_putchar('\n');
 	
 	return (0);
 }
