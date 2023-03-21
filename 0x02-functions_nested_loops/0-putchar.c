@@ -1,6 +1,6 @@
 #include "main.h"
-/*
- * main - Entry point
+/**
+ * main : entry point
  * @l: The character to print
  * Return: Always 0 (Success)
 */
