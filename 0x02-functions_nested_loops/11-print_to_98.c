@@ -10,7 +10,7 @@ void print_to_98(int n)
 	{
 		if (n == 98)
 		{
-			_putchar("%d,",n)
+			_putchar('%d,',n)
 		}
-		-putchar("%d,",n);
+		-putchar('%d,',n);
 	}
