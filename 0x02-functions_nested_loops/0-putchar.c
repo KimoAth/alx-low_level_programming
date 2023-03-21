@@ -1,17 +1,16 @@
 #include "main.h"
 /**
  * main - Entry point
- * @c: The character to print
  * Return: Always 0 (Success)
 */
 int main(void)
 {
 	char car[] = "_putchar";
-	int c;
+	int l;
 
-	for (c = 0; c < 8; c++)
+	for (l = 0; l < 8; l++)
 	{
-		_putchar(car[c]);
+		_putchar(car[l]);
 	}
 	_putchar('\n');
 	return (0);
