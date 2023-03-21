@@ -12,9 +12,9 @@ int main(void)
 
 	for(l = 0; l < 8; l++)
 	{
-		_putchar(car[l]) ;
+		_putchar(car[l]);
 	}
 	_putchar('\n');
-	
+
 	return (0);
 }
