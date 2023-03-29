@@ -1,46 +1,34 @@
 #include "main.h"
 /**
- * print_number - print an int numbers.
- * @n: number tested
- * Return: Always 0.
+ *rot13 - encodes strings using rot13.
+ *@s: pointer to string.
+ *
+ *Return: pointer to encoded string.
  */
-void print_number(int n)
+char *rot13(char *s)
 {
-	int i, j, digit, digits, power;
-	unsigned int temp, numchar, number;
+	int stringCount, rotation;
+	char r1[] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
+		     'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y',
+		     'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L',
+		     'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y',
+		     'Z'};
+	char r2[] = {'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y',
+		     'z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
+		     'm', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y',
+		     'Z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L',
+		     'M'};
 
-	digit = 0;
-	if (n < 0)
+	for (stringCount = 0; s[stringCount] != '\0'; stringCount++)
 	{
-		_putchar('-');
-		temp = -n;
+		for (rotation = 0; rotation < 53; rotation++)
+		{
+			if (r1[rotation] == s[stringCount])
+			{
+				s[stringCount] = r2[rotation];
+				break;
+			}
+		}
 	}
-	else
-	{
-		temp = n;
-	}
-
-	number = temp;
-
-	while (number >= 10)
-	{
-		number = number / 10;
-		digit++;
-	}
-	digits = digit + 1;
-	power = 1;
-	i = 1;
-
-	while (i < digits)
-	{
-		power = power * 10;
-		i++;
-	}
-	j = power;
-	while (j >= 1)
-	{
-		numchar = (temp / j) % 10;
-		_putchar(numchar + '0');
-		j = j / 10;
-	}
+	return (s);
 }
