@@ -3,9 +3,8 @@
 #include <string.h>
 
 /**
- * _print_rev_recursion : function that prints a string in reverse.
- * @s : string that gonna be writen.
- * Return void.
+ * _print_rev_recursion -  function that prints a string in reverse.
+ * @s: string that gonna be writen 
 */
 void _print_rev_recursion(char *s)
 {
