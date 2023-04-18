@@ -11,27 +11,28 @@
  *
  * Return: pointer to the new dog, NULL if fails
  */
-
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *d = malloc(sizeof(dog_t));
+	dog_t *new_dog;
 
-	if (d == NULL)
+	new_dog = malloc(sizeof(dog_t));
+	if (new_dog == NULL)
 		return (NULL);
-	d->name = strdup(name);
-	if (d->name == NULL)
+	new_dog->name = malloc(sizeof(char) * (strlen(name) + 1));
+	if (new_dog->name == NULL)
 	{
-		free(d);
+		free(new_dog);
 		return (NULL);
 	}
-	d->age = age;
-	d->owner = strdup(owner);
-
-	if (d->owner == NULL)
+	strcpy(new_dog->name, name);
+	new_dog->owner = malloc(sizeof(char) * (strlen(owner) + 1));
+	if (new_dog->owner == NULL)
 	{
-		free(d->name);
-		free(d);
+		free(new_dog->name);
+		free(new_dog);
 		return (NULL);
 	}
-	return (d);
-}
+	strcpy(new_dog->owner, owner);
+	new_dog->age = age;
+	return (new_dog);
+}}
