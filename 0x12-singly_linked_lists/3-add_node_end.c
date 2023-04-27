@@ -4,10 +4,10 @@
 
 /**
  * add_node_end - adds a new node at the end of a list_t list.
- * @head: pointer to the head of the list.
- * @str: string to be stored in the new node.
+ * @head: head of the linked list.
+ * @str: string to add.
  *
- * Return: Address of the new element, or NULL if it failed.
+ * Return: pointer of the new node added to linked list, or NULL if it failed.
  */
 
 list_t *add_node_end(list_t **head, const char *str)
