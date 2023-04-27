@@ -2,11 +2,10 @@
 #include <stdio.h>
 
 /**
- * print_list -  function that prints all the elements of a list_t list.
- * @count: counter
- *
- * Return: count
- */
+ * print_list - prints all elements of a linked list
+ * @h: pointer to the head of the list
+ * Return: count (the number of nodes in the list).
+*/
 size_t print_list(const list_t *h)
 {
 	size_t count = 0;
