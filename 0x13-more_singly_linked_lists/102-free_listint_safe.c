@@ -9,26 +9,33 @@
  */
 size_t free_listint_safe(listint_t **h)
 {
-	size_t count = 0;
-	listint_t *current, *tmp;
+	size_t len = 0;
+	int diff;
+	listint_t *temp;
 
-	if (h == NULL || *h == NULL)
+	if (!h || !*h)
 		return (0);
 
-	current = *h;
-	while (current != NULL)
+	while (*h)
 	{
-		count++;
-		if (current <= current->next)
+		diff = *h - (*h)->next;
+		if (diff > 0)
 		{
-			printf("-> [%p] %d\n", (void *)current, current->n);
-			free(current);
+			temp = (*h)->next;
+			free(*h);
+			*h = temp;
+			len++;
+		}
+		else
+		{
+			free(*h);
+			*h = NULL;
+			len++;
 			break;
 		}
-		tmp = current;
-		current = current->next;
-		free(tmp);
 	}
+
 	*h = NULL;
-	return (count);
+
+	return (len);
 }

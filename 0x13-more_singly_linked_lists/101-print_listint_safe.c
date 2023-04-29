@@ -10,25 +10,21 @@
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	const listint_t *current = head;
-	const listint_t *addresses[1024];
-	size_t count = 0, i;
+	size_t num = 0;
+	long int diff;
 
-	while (current != NULL)
+	while (head)
 	{
-		printf("[%p] %d\n", (void *)current, current->n);
-
-		for (i = 0; i < count; i++)
+		diff = head - head->next;
+		num++;
+		printf("[%p] %d\n", (void *)head, head->n);
+		if (diff > 0)
+			head = head->next;
+		else
 		{
-			if (current->next == addresses[i])
-			{
-				printf("-> [%p] %d\n", (void *)current->next, current->next->n);
-				return (count + 1);
-			}
+			printf("-> [%p] %d\n", (void *)head->next, head->next->n);
+			break;
 		}
-		addresses[count++] = current;
-		current = current->next;
 	}
-
-	return (count);
+	return (num);
 }
