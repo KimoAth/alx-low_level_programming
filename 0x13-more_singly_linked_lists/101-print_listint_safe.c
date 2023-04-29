@@ -1,5 +1,5 @@
 #include "lists.h"
-#include <stdlib.h>
+#include <stdint.h>
 #include <stdio.h>
 
 /**
@@ -10,22 +10,22 @@
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	size_t num = 0;
-	long int diff;
+    size_t num = 0;
+    intptr_t diff;
 
-	while (head)
-	{
-		diff = head - head->next;
-		num++;
-		printf("[%p] %d\n", (void *)head, head->n);
-		if (diff > 0)
-			head = head->next;
-		else
-		{
-			printf("-> [%p] %d\n", (void *)head->next, head->next->n);
-			break;
-		}
-	}
+    while (head)
+    {
+        diff = (intptr_t)head - (intptr_t)head->next;
+        num++;
+        printf("[%p] %d\n", (void *) (intptr_t) head, head->n);
+        if (diff > 0)
+            head = head->next;
+        else
+        {
+            printf("-> [%p] %d\n", (void *) (intptr_t) head->next, head->next->n);
+            break;
+        }
+    }
 
-	return (num);
+    return (num);
 }
