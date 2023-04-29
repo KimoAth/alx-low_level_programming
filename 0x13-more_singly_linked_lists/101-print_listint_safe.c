@@ -10,30 +10,25 @@
  */
 size_t print_listint_safe(const listint_t *head)
 {
-    const listint_t *current = head;
-    const listint_t *addresses[1024];
-    size_t count = 0, i;
+	const listint_t *current = head;
+	const listint_t *addresses[1024];
+	size_t count = 0, i;
 
-    while (current != NULL)
-    {
-        printf("[%p] %d\n", (void *)current, current->n);
+	while (current != NULL)
+	{
+		printf("[%p] %d\n", (void *)current, current->n);
 
-        /* Check if the next node is already printed */
-        for (i = 0; i < count; i++)
-        {
-            if (current->next == addresses[i])
-            {
-                printf("-> [%p] %d\n", (void *)current->next, current->next->n);
-                return (count + 1);
-            }
-        }
+		for (i = 0; i < count; i++)
+		{
+			if (current->next == addresses[i])
+			{
+				printf("-> [%p] %d\n", (void *)current->next, current->next->n);
+				return (count + 1);
+			}
+		}
+		addresses[count++] = current;
+		current = current->next;
+	}
 
-        /* Save the address of the current node */
-        addresses[count++] = current;
-
-        /* Move to the next node */
-        current = current->next;
-    }
-
-    return (count);
+	return (count);
 }
