@@ -1,50 +1,39 @@
-#include "lists.h"
 #include <stdio.h>
+#include <stdlib.h>
+#include "lists.h"
 
 /**
- * print_listint_safe - prints a listint_t linked list, even if it has a loop
- * @head: pointer to the head of the list
- * Return: the number of nodes in the list
+ * print_listint_safe - Prints a linked list, avoiding infinite loops.
+ * @head: A pointer to the first node of the linked list to print.
+ *
+ * Return: The number of nodes in the list.
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	const listint_t *slow, *fast;
-	size_t count = 0;
+    const listint_t *current = head;
+    const listint_t *addresses[1024];
+    size_t count = 0, i;
 
-	if (!head)
-		exit(98);
+    while (current != NULL)
+    {
+        printf("[%p] %d\n", (void *)current, current->n);
 
-	slow = head;
-	fast = head->next;
+        /* Check if the next node is already printed */
+        for (i = 0; i < count; i++)
+        {
+            if (current->next == addresses[i])
+            {
+                printf("-> [%p] %d\n", (void *)current->next, current->next->n);
+                return (count + 1);
+            }
+        }
 
-	while (fast && fast < slow)
-	{
-		printf("[%p] %d\n", (void *)slow, slow->n);
-		slow = slow->next;
-		fast = fast->next;
-		count++;
-	}
+        /* Save the address of the current node */
+        addresses[count++] = current;
 
-	if (fast)
-	{
-		printf("[%p] %d\n", (void *)slow, slow->n);
-		printf("-> [%p] %d\n", (void *)fast, fast->n);
-		count += 2;
-		slow = slow->next;
-		fast = fast->next;
+        /* Move to the next node */
+        current = current->next;
+    }
 
-		while (fast && fast < slow)
-		{
-			printf("[%p] %d\n", (void *)slow, slow->n);
-			slow = slow->next;
-			fast = fast->next;
-			count++;
-		}
-
-		printf("[%p] %d\n", (void *)slow, slow->n);
-	}
-
-	count++;
-
-	return (count);
+    return (count);
 }
