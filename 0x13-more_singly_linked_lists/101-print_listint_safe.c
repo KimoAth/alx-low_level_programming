@@ -1,12 +1,12 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "lists.h"
+#include <stdlib.h>
+#include <stdio.h>
 
 /**
- * print_listint_safe - Prints a linked list, avoiding infinite loops.
- * @head: A pointer to the first node of the linked list to print.
+ * print_listint_safe - prints a linked list, safely
+ * @head: list of type listint_t to print
  *
- * Return: The number of nodes in the list.
+ * Return: number of nodes in the list
  */
 size_t print_listint_safe(const listint_t *head)
 {
@@ -26,5 +26,6 @@ size_t print_listint_safe(const listint_t *head)
 			break;
 		}
 	}
+
 	return (num);
 }
