@@ -5,6 +5,7 @@
  * @h: Pointer to a pointer to the head of the linked list.
  * @idx: Index at which the new node should be inserted.
  * @n: Value of the new node.
+ * 
  * Return: Address of the new node, or NULL if it failed.
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
@@ -47,4 +48,5 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
         current->next = new_node;
 
         return new_node;
+
 }
